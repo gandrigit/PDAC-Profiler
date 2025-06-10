@@ -12,13 +12,9 @@ Hafner et al., Manuscript in prep.
 The provided scripts constitute the official bioinformatic pipeline for processing normalized transcriptome data to predict PDAC subtypes.
 
 **Composing of Results:**
-The results directory is divided into 3 sub-directories: fastq_aln, guide_aln and random.
+TO DO
 
-1. *fastq_aln* contains all pre-processing and alignment files from fastq.gz to bam files.
 
-2. *guide_aln* contains the post-processing files from bed files to final xlsx report.
-
-3. *random* contains the information related to the random regions that are used for normalisation.
 
 ### Prerequisites
 Requiered software and databases
