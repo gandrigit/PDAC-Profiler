@@ -46,9 +46,11 @@ PDAC-Profiler
 
 ```
 **Remark:** Before using the **PDAC-Profiler**, ensure that your transcriptome data are properly **normalized**. We recommend **state-of-the-art normalization methods** such as:
-- **Library size normalization** and **TMM** (Trimmed Mean of M-values) for RNA-seq data.
+- **Library size normalization** and **TMM** (Trimmed Mean of M-values) for RNA-seq data. <br/>
 - **RMA** (Robust Multi-array Average) for microarray data.
+  
 **Batch correction** may be required depending on the dataset. Users are responsible for determining whether batch effects are present and, if so, for applying appropriate correction methods.
+
 **Important:** Use **HUGO Gene Symbols** (Gene Symbol) as unique identifiers for your genes.
 
 
