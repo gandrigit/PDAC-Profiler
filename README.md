@@ -7,6 +7,8 @@ This repository contains a framework for predicting subtypes of Pancreatic Ducta
 If you use **PDAC-Profiler** in your work, please cite the original publication:
 Hafner et al., Manuscript in prep.
 
+[![DOI](https://zenodo.org/badge/999408057.svg)](https://doi.org/10.5281/zenodo.15632386)
+
 ## Getting Started
 
 The provided scripts constitute the official bioinformatic pipeline for processing normalized transcriptome data to predict PDAC subtypes.
