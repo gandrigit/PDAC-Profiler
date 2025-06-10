@@ -224,15 +224,15 @@ if (!is.null(species_name)) {
 sig_df <- readr::read_tsv(file.path(signature_file))
 
 sig_list <- lapply(seq_len(ncol(sig_df)), function(i) {
-    genes <- as.character(sig_df[, i])
+    genes <- sig_df %>% pull(i)
     genes.symbol <- alias2Symbol(genes, species = "Hs")
     genes.entrez <- symbol2entrez(genes.symbol)
-    return(sort(unique(genes.entrez)))
+    sort(unique(genes.entrez))
 })
 names(sig_list) <- colnames(sig_df)
 
-sig_list$Basal_Union <- Union(sig_list[grepl("basal", names(sig_list), ignore.case = TRUE)])
-sig_list$Classical_Union <- Union(sig_list[grepl("classi", names(sig_list), ignore.case = TRUE)])
+sig_list$Basal_Union <- Reduce(union, sig_list[grepl("basal", names(sig_list), ignore.case = TRUE)])
+sig_list$Classical_Union <- Reduce(union, sig_list[grepl("classi", names(sig_list), ignore.case = TRUE)])
 
 dbList <- list("PDAC_subtype" = sig_list)
 
@@ -272,7 +272,11 @@ dbTibbles <- lapply(dbList, function(db){
 # ##################################################
 # based on CPM (single sample)
 
-expr <- readr::read_delim(input_file)
+expr <- readr::read_tsv(input_file)
+expr <- data.frame(expr)
+rownames(expr) <- expr[,1]
+expr <- expr[, -1]
+
 
 # ##################################################
 # Ensembl 2 entrez
@@ -426,12 +430,10 @@ names(fh_list) <- gsub("_PDAC_subtype_fgsea.xlsx", "", fh_files)
 nes_df <- getNESmat(fh_list)
 colnames(nes_df) <- gsub("\\.", "-", colnames(nes_df))
 
-nes_df <- nes_df[, match(ann.sample$FASTQ, colnames(nes_df))]
-
 # save
-toxlsx <- data.frame(SAMPLE = colnames(nes_df.avg),
-                    BasalScore = nes_df.avg["Basal_Union", ] - nes_df.avg["Classical_Union", ],
-                    ClassicalScore = nes_df.avg["Classical_Union", ] - nes_df.avg["Basal_Union", ]
+toxlsx <- data.frame(SAMPLE = colnames(nes_df),
+                    BasalScore = as.numeric(nes_df["Basal_Union", ]) - as.numeric(nes_df["Classical_Union", ]),
+                    ClassicalScore = as.numeric(nes_df["Classical_Union", ]) - as.numeric(nes_df["Basal_Union", ])
                     )
 toxlsx$BasalScore <- scales::rescale(toxlsx$BasalScore)
 toxlsx$ClassicalScore <- scales::rescale(toxlsx$ClassicalScore)
