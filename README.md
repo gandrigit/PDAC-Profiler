@@ -85,7 +85,14 @@ We thank all members of our laboratories for constructive discussions and sugges
 
 
 ## References
+Moffitt RA, Marayati R, Flate EL, et al. Virtual microdissection identifies distinct tumor- and stroma-specific subtypes of pancreatic ductal adenocarcinoma. Nat Genet. 2015;47(10):1168-1178. doi:10.1038/ng.3398 [Moffitt et al.](https://pubmed.ncbi.nlm.nih.gov/26343385/)
 
+Bailey P, Chang DK, Nones K, et al. Genomic analyses identify molecular subtypes of pancreatic cancer. Nature. 2016;531(7592):47-52. doi:10.1038/nature16965 [Bailey et al.](https://pubmed.ncbi.nlm.nih.gov/26909576/)
 
+Collisson EA, Sadanandam A, Olson P, et al. Subtypes of pancreatic ductal adenocarcinoma and their differing responses to therapy. Nat Med. 2011;17(4):500-503. doi:10.1038/nm.2344 [Collisson et al.](https://pubmed.ncbi.nlm.nih.gov/21460848/)
+
+Puleo F, Nicolle R, Blum Y, et al. Stratification of Pancreatic Ductal Adenocarcinomas Based on Tumor and Microenvironment Features. Gastroenterology. 2018;155(6):1999-2013.e3. doi:10.1053/j.gastro.2018.08.033 [Puleo et al.](https://pubmed.ncbi.nlm.nih.gov/30165049/)
+
+Chan-Seng-Yue M, Kim JC, Wilson GW, et al. Transcription phenotypes of pancreatic cancer are driven by genomic events during tumor evolution [published correction appears in Nat Genet. 2020 Apr;52(4):463. doi: 10.1038/s41588-020-0588-3.]. Nat Genet. 2020;52(2):231-240. doi:10.1038/s41588-019-0566-9 [Chan-Seng-Yue et al.](https://pubmed.ncbi.nlm.nih.gov/31932696/)
 
 
