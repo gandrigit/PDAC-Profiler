@@ -11,11 +11,6 @@ Hafner et al., Manuscript in prep.
 
 The provided scripts constitute the official bioinformatic pipeline for processing normalized transcriptome data to predict PDAC subtypes.
 
-**Composing of Results:**
-TO DO
-
-
-
 ### Prerequisites
 Requiered software and databases
 
@@ -36,8 +31,6 @@ Requiered software and databases
   * ComplexHeatmap
   * limma
 
-
-
 3. Additional Files (provided in data folder)
 	* PDAC_signatures.tsv
 
@@ -53,8 +46,8 @@ PDAC-Profiler
 └── R   
     ├── enrichment_plot_helper_fct.R
     └── PDAC-Profiler.R
-
 ```
+
 **Remark:** Before using the **PDAC-Profiler**, ensure that your transcriptome data are properly **normalized**. We recommend **state-of-the-art normalization methods** such as:
 - **Library size normalization** and **TMM** (Trimmed Mean of M-values) for RNA-seq data. <br/>
 - **RMA** (Robust Multi-array Average) for microarray data.
@@ -71,14 +64,29 @@ Make sure all required R packages are installed. The **PDAC-Profiler** can then 
 Rscript ./R/PDAC-Profiler.R --input_file "./data/toy_data.tsv"\
                           --signature_file "./data/PDAC_signatures.tsv"\
                           --output_dir "./output"
+                          --species_name "human"
 ```
-
-**--input_file** input file with normalized mRNA intensity (e.g. log2 CPM or log2 RMA), expected genes in rows, samples in columns<br/>
-**--signature_file** <br/>
-**--output_dir** <br/>
 
 ### Parameters
 
+**--input_file** input file with normalized mRNA intensity (e.g. log2 CPM or log2 RMA), expected genes in rows, samples in columns<br/>
+**--signature_file** PDAC subtype signatures .tsv file. One column per subtype. Use **HUGO Gene Symbols** (Human Gene Symbol) as unique identifiers. <br/>
+**--output_dir** output directory<br/>
+**--species_name** name of the current species (human or mouse).
+
+### Output directory structure
+
+```
+output_dir
+└── fgsea
+     └── PDAC_subtype
+          ├── sample_A_fgsea.xlsx
+          ├── sample_B_fgsea.xlsx
+          ├── ...
+          ├── heatmaps
+          └── PDAC_subtype.xlsx
+
+```
 
 
 ## Authors
