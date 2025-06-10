@@ -1,0 +1,7 @@
+linters: linters_with_defaults(
+  trailing_whitespace_linter = NULL,
+  indentation_linter = NULL,
+  line_length_linter = line_length_linter(200))
+exclude: ".*\\.Rproj$"
+exclude_start: "# nolint start"
+exclude_end: "# nolint end"

@@ -25,7 +25,19 @@ Requiered software and databases
 2. R packages
 	* openxlsx
   * tidyverse
-    
+  * optparse
+  * org.Hs.eg.db
+  * org.Mm.eg.db
+  * homologene
+  * clusterProfiler
+  * gridExtra
+  * parallel
+  * circlize
+  * ComplexHeatmap
+  * limma
+
+
+
 3. Additional Files (provided in data folder)
 	* PDAC_signatures.tsv
 
@@ -35,14 +47,12 @@ Requiered software and databases
 PDAC-Profiler
 │
 ├── data
-|   ├── toy_data.tsv
-│   └── PDAC_signatures.tsv
-|
-└── script   
-    ├── annotateGenes.R
-    ├── bed2sequence.R
-    └── bedTools_fct.R
-
+│  ├── toy_data.tsv
+│  └── PDAC_signatures.tsv
+│
+└── R   
+    ├── enrichment_plot_helper_fct.R
+    └── PDAC-Profiler.R
 
 ```
 **Remark:** Before using the **PDAC-Profiler**, ensure that your transcriptome data are properly **normalized**. We recommend **state-of-the-art normalization methods** such as:
@@ -58,7 +68,7 @@ PDAC-Profiler
 Make sure all required R packages are installed. The **PDAC-Profiler** can then be executed using:
 
 ```
-Rscript ./PDAC-Profiler.R --input_file "./data/toy_data.tsv"\
+Rscript ./R/PDAC-Profiler.R --input_file "./data/toy_data.tsv"\
                           --signature_file "./data/PDAC_signatures.tsv"\
                           --output_dir "./output"
 ```
